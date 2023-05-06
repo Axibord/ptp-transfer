@@ -1,0 +1,27 @@
+{
+  "name": "ptp-transfer",
+  "version": "1.0.0",
+  "description": "Transfer files between two actors using TCP protocol",
+  "scripts": {
+    "dev:sender": "nodemon src/sender.ts",
+    "dev:receiver": "nodemon src/receiver.ts",
+    "build:sender": "npx tsc -p tsconfig.sender.json && cp -r files build",
+    "build:receiver": "npx tsc -p tsconfig.receiver.json",
+    "start:sender": "node build/sender/sender.js",
+    "start:receiver": "node build/receiver/receiver.js",
+    "start:receiverV2": "runas /user:Administrator \"node build/receiver/receiver.js\"",
+    "test": ""
+  },
+  "keywords": [],
+  "author": "Axibord",
+  "license": "ISC",
+  "dependencies": {
+    "@types/nat-upnp": "^1.1.2",
+    "nat-upnp": "^1.1.1",
+    "typescript": "^5.0.4"
+  },
+  "devDependencies": {
+    "@types/node": "^20.0.0",
+    "nodemon": "^2.0.22"
+  }
+}
