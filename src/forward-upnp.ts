@@ -7,13 +7,13 @@ export function forwardPort() {
     {
       public: PORT,
       private: PORT,
-      ttl: 0,
+      ttl: 0, // 0 = permanent mapping (needs to be manually removed later)
     },
     function (err: any) {
       if (err) {
         console.log('Error creating port mapping:', err)
       } else {
-        console.log('Port mapping created successfully!')
+        console.log(`Port mapping created successfully for port ${PORT}`)
       }
     }
   )
